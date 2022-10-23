@@ -17,11 +17,12 @@ Register With Existing Account Test
 
 Register Without Filling Required Field Test
     [Template]    Register Without Filling Required Field Template
-    Username Tooltip Test    ${EMPTY}    welcome@123    john    wick    3344    Please fill out this field
-    Password Tooltip Test    john0012    ${EMPTY}    john    wick    3344    Please fill out this field
-    Firstname Tooltip Test    john0012    welcome@123    ${EMPTY}    wick    3344    Please fill out this field
-    FamilyName Tooltip Test    john0012    welcome@123    john    ${EMPTY}    3344    Please fill out this field
-    Phone Tooltip Test    john0012    welcome@123    john    wick    ${EMPTY}    Please fill out this field
+    [Documentation]    Verify Tooltip for empty field on register page by running 4 different test cases 
+    Username Tooltip Test    ${EMPTY}    welcome@123    john    wick    3344    Please fill out this field.
+    Password Tooltip Test    john0012    ${EMPTY}    john    wick    3344    Please fill out this field.
+    Firstname Tooltip Test    john0012    welcome@123    ${EMPTY}    wick    3344    Please fill out this field.
+    FamilyName Tooltip Test    john0012    welcome@123    john    ${EMPTY}    3344    Please fill out this field.
+    Phone Tooltip Test    john0012    welcome@123    john    wick    ${EMPTY}    Please fill out this field.
 
 *** Keywords ***
 Register Without Filling Required Field Template
@@ -34,13 +35,17 @@ Register Without Filling Required Field Template
     Input Text    locator=id:lastname    text=${familyname}
     Input Text    locator=id:phone    text=${phone}
     Click Button    locator=Register
-    FOR    ${i}    IN RANGE    0    5 
-        IF    ${username} == ${EMPTY}
-            ${tooltip}    Execute Javascript    return document.querySelectorAll('input')[${i}].validationMessage
-        END
-        ${tooltip}    Execute Javascript    return document.querySelectorAll('input')[${i}].validationMessage
-        ${field_name}    Execute Javascript    return document.querySelectorAll('input')[${i}].id
-        Log To Console    ${tooltip}
-        Log To Console    ${field_name}
+    
+    IF    '${username}' == '${EMPTY}'
+        Set Local Variable    ${locator}    \#username
+    ELSE IF  '${password}' == '${EMPTY}'
+        Set Local Variable    ${locator}    \#password
+    ELSE IF  '${firstname}' == '${EMPTY}'
+        Set Local Variable    ${locator}    \#firstname
+    ELSE IF  '${familyname}' == '${EMPTY}'
+        Set Local Variable    ${locator}    \#lastname
+    ELSE IF  '${phone}' == '${EMPTY}'
+        Set Local Variable    ${locator}    \#phone
     END
-        
+    ${actual_tooltip}    Execute Javascript    return document.querySelector('${locator}').validationMessage
+    Should Be Equal    ${expected_tooltip}    ${actual_tooltip}
