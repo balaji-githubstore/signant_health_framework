@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20221023 19:43:44.978" rpa="false" schemaversion="2">
+<suite id="s1" name="Invalid Register Suite" source="c:\Mine\Company\SignantHealth\signant_health_framework\UI_Suite\1__register_suite\2__invalid_register_suite.robot">
+<test id="s1-t1" name="Invalid Register Existing Account Test">
+<kw name="Launch Browser And Navigate To Demo App" library="CommonFunctionality" type="SETUP">
+<kw name="Get Driver Path" library="driver_setup">
+<var>${driver_path}</var>
+<arg>${BROWSER_NAME}</arg>
+<msg timestamp="20221023 19:43:45.373" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20221023 19:43:45.788" level="INFO">Get LATEST chromedriver version for google-chrome 106.0.5249</msg>
+<msg timestamp="20221023 19:43:46.423" level="INFO">Driver [C:\Users\JiDi\.wdm\drivers\chromedriver\win32\106.0.5249\chromedriver.exe] found in cache</msg>
+<msg timestamp="20221023 19:43:46.423" level="INFO">${driver_path} = C:\Users\JiDi\.wdm\drivers\chromedriver\win32\106.0.5249\chromedriver.exe</msg>
+<status status="PASS" starttime="20221023 19:43:45.373" endtime="20221023 19:43:46.423"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER_NAME}</arg>
+<arg>executable_path=${driver_path}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221023 19:43:46.424" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20221023 19:43:46.424" endtime="20221023 19:43:47.660"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221023 19:43:47.660" endtime="20221023 19:43:47.786"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20221023 19:43:47.787" endtime="20221023 19:43:47.789"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>value=10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20221023 19:43:47.789" endtime="20221023 19:43:47.791"/>
+</kw>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>path=screenshot/</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20221023 19:43:47.791" endtime="20221023 19:43:47.792"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20221023 19:43:47.793" level="INFO">Opening url 'http://localhost:8080/'</msg>
+<status status="PASS" starttime="20221023 19:43:47.792" endtime="20221023 19:43:49.081"/>
+</kw>
+<status status="PASS" starttime="20221023 19:43:45.372" endtime="20221023 19:43:49.081"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>locator=link=Register</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221023 19:43:49.083" level="INFO">Clicking link 'link=Register'.</msg>
+<status status="PASS" starttime="20221023 19:43:49.082" endtime="20221023 19:43:49.515"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=id:username</arg>
+<arg>text=demo2</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221023 19:43:49.516" level="INFO">Typing text 'demo2' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20221023 19:43:49.515" endtime="20221023 19:43:49.641"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>locator=id:password</arg>
+<arg>password=demo1</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20221023 19:43:49.643" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20221023 19:43:49.693" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20221023 19:43:49.749" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20221023 19:43:49.642" endtime="20221023 19:43:49.749"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=id:firstname</arg>
+<arg>text=demo1f</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221023 19:43:49.751" level="INFO">Typing text 'demo1f' into text field 'id:firstname'.</msg>
+<status status="PASS" starttime="20221023 19:43:49.750" endtime="20221023 19:43:49.845"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=id:lastname</arg>
+<arg>text=demo1l</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221023 19:43:49.846" level="INFO">Typing text 'demo1l' into text field 'id:lastname'.</msg>
+<status status="PASS" starttime="20221023 19:43:49.846" endtime="20221023 19:43:49.932"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=id:phone</arg>
+<arg>text=80956722</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221023 19:43:49.934" level="INFO">Typing text '80956722' into text field 'id:phone'.</msg>
+<status status="PASS" starttime="20221023 19:43:49.933" endtime="20221023 19:43:50.020"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=Register</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221023 19:43:50.022" level="INFO">Clicking button 'Register'.</msg>
+<status status="PASS" starttime="20221023 19:43:50.021" endtime="20221023 19:43:50.404"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>locator=xpath=//div[contains(text(),'already')]</arg>
+<arg>expected=User demo2 is already registered.</arg>
+<arg>message=User should have been displayed with message as 'User is already registered'</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20221023 19:43:50.455" level="INFO">Element 'xpath=//div[contains(text(),'already')]' contains text 'User demo2 is already registered.'.</msg>
+<status status="PASS" starttime="20221023 19:43:50.405" endtime="20221023 19:43:50.456"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221023 19:43:50.459" endtime="20221023 19:43:52.606"/>
+</kw>
+<status status="PASS" starttime="20221023 19:43:45.371" endtime="20221023 19:43:52.608"/>
+</test>
+<status status="PASS" starttime="20221023 19:43:44.983" endtime="20221023 19:43:52.614"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Invalid Register Suite">Invalid Register Suite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
