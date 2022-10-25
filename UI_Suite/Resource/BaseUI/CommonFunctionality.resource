@@ -17,5 +17,5 @@ Launch Browser And Navigate To Demo App
     Maximize Browser Window
     Set Selenium Implicit Wait    10s
     Set Selenium Timeout    value=10s
-    Set Screenshot Directory    path=screenshot/
+    Set Screenshot Directory    path=UI_Suite/screenshot
     Go To    url=${URL}
