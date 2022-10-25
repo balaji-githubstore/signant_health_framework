@@ -2,9 +2,9 @@
 Documentation     Invalid account registration
 ...               Test case TC_03
 Resource          ../../Resource/BaseUI/CommonFunctionality.resource
-Resource    ../../Resource/Pages/RegisterPage.resource
-Resource    ../../Resource/Pages/HomePage.resource
-Resource    ../../Resource/Pages/RegisterPage.resource
+Resource          ../../Resource/Pages/RegisterPage.resource
+Resource          ../../Resource/Pages/HomePage.resource
+Resource          ../../Resource/Pages/RegisterPage.resource
 Test Setup        Launch Browser And Navigate To Demo App
 Test Teardown     Close Browser
 Test Template     Register Without Filling Required Field Template

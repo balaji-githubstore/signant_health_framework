@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 4.1.3 (Python 3.10.2 on win32)" name="Generator">
+<meta content="Robot Framework 6.0 (Python 3.10.2 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all" type="text/css">
 /* Generic and misc styles */
@@ -764,6 +764,7 @@ window.model = (function () {
     }
     function Keyword(data) {
         var kw = createModelObject(data);
+        var flatTypes = ['RETURN', 'BREAK', 'CONTINUE'];
         kw.libname = data.libname;
         kw.fullName = (kw.libname ? kw.libname + '.' : '') + kw.name;
         kw.type = data.type;
@@ -1148,8 +1149,8 @@ window.testdata = function () {
     var _statistics = null;
     var LEVELS = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'FAIL', 'SKIP'];
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
-    var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'VAR', 'IF', 'ELSE IF', 'ELSE'];
-    var MESSAGE_TYPE = 8;
+    var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF', 'ELSE IF', 'ELSE', 'RETURN',
+                         'TRY', 'EXCEPT', 'FINALLY', 'WHILE', 'CONTINUE', 'BREAK'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -1170,10 +1171,10 @@ window.testdata = function () {
                 elapsed];
     }
     function createMessage(element, strings) {
-        return model.Message(LEVELS[element[2]],
-                             util.timestamp(element[1]),
-                             strings.get(element[3]),
-                             strings.get(element[4]));
+        return model.Message(LEVELS[element[1]],
+                             util.timestamp(element[0]),
+                             strings.get(element[2]),
+                             strings.get(element[3]));
     }
     function parseStatus(stats) {
         return STATUSES[stats[0]];
@@ -1184,7 +1185,7 @@ window.testdata = function () {
         };
     }
     function createBodyItem(parent, element, strings, index) {
-        if (element[0] == MESSAGE_TYPE)
+        if (element.length < 5)
             return createMessage(element, strings);
         var messages = util.filter(parent.children(), function (child) {
             return child.type == 'message';
@@ -1628,7 +1629,7 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[1,0,94337],[[4,5,6,0,[],[1,33,94272],[[7,8,9,0,[],[1,33,54983],[[10,11,12,13,[],[1,41,8643],[],[[14,0,0,[],[1,616,8060],[]]],[],[1,1,0,0]],[15,16,17,18,[],[1,8700,7959],[],[[19,0,0,[],[1,8820,7831],[]]],[],[1,1,0,0]],[20,21,22,23,[],[1,16675,38317],[],[[24,0,25,[],[1,16716,7624],[]],[26,0,27,[],[1,24348,7282],[]],[28,0,29,[],[1,31638,7572],[]],[30,0,31,[],[1,39218,7490],[]],[32,0,33,[],[1,46716,8268],[]]],[],[5,5,0,0]]],[],[],[7,7,0,0]],[34,35,36,0,[],[1,55032,39249],[[37,38,39,40,[],[1,55048,8359],[],[[41,0,0,[],[1,55152,8247],[]]],[],[1,1,0,0]],[42,43,44,45,[],[1,63424,30841],[],[[46,0,0,[],[1,63474,8121],[]],[47,0,0,[],[1,71603,8028],[]],[24,0,0,[],[1,79639,7282],[]],[26,0,0,[],[1,86929,7328],[]]],[],[4,4,0,0]]],[],[],[5,5,0,0]]],[],[],[12,12,0,0]]],[],[],[12,12,0,0]];
+window.output["suite"] = [1,2,3,0,[],[1,0,95413],[[4,5,6,0,[],[1,46,95343],[[7,8,9,0,[],[1,54,55800],[[10,11,12,13,[],[1,54,8947],[],[[14,0,0,[],[1,563,8430],[]]],[],[1,1,0,0]],[15,16,17,18,[],[1,9017,7630],[],[[19,0,0,[],[1,9089,7550],[]]],[],[1,1,0,0]],[20,21,22,23,[],[1,16663,39175],[],[[24,0,25,[],[1,16720,7575],[]],[26,0,27,[],[1,24295,7992],[]],[28,0,29,[],[1,32295,7442],[]],[30,0,31,[],[1,39745,8225],[]],[32,0,33,[],[1,47978,7852],[]]],[],[5,5,0,0]]],[],[],[7,7,0,0]],[34,35,36,0,[],[1,55862,39511],[[37,38,39,40,[],[1,55886,8651],[],[[41,0,0,[],[1,55988,8541],[]]],[],[1,1,0,0]],[42,43,44,45,[],[1,64545,30812],[],[[46,0,0,[],[1,64589,7841],[]],[47,0,0,[],[1,72438,8282],[]],[24,0,0,[],[1,80728,6985],[]],[26,0,0,[],[1,87721,7628],[]]],[],[4,4,0,0]]],[],[],[5,5,0,0]]],[],[],[12,12,0,0]]],[],[],[12,12,0,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
@@ -1637,13 +1638,13 @@ window.output["strings"] = [];
 window.output["strings"] = window.output["strings"].concat(["*","*Ui Suite","*c:\\Mine\\Company\\SignantHealth\\signant_health_framework\\ui_suite","eNqzSVTIKEpNs1VKy8xJtdLX13e20vfNzEvVd87PLUjMq9QPzkzPS8wr8UhNzCnJ0C+G8OIzwNz4tKLE3NTy/KJs/dLM+OLSzJJUJTsqGWSjn2gHAFUDOZg=","*Tests","*c:\\Mine\\Company\\SignantHealth\\signant_health_framework\\ui_suite\\tests","eNqzSVTIKEpNs1VKy8xJtdLX13e20vfNzEvVd87PLUjMq9QPzkzPS8wr8UhNzCnJ0C+G8OIzwNz4tKLE3NTy/KJs/dLM+OLSzJJU/ZLU4pJiJTuqGmejn2gHADfuPlw=","*Register Suite","*c:\\Mine\\Company\\SignantHealth\\signant_health_framework\\ui_suite\\tests\\1__register_suite","eNq1zTEOglAQRdGtGDbwYkuQhsbGygVMpnifPxE+ZmaIcfcmsAbLc5s76KU6y60rtrAHMPV4WCOmbX1r++Jpc9OWd+qSFXFK6kEpris/m7+wm8RuSSQjA1cR52yR9LN3458HA3T8ASZqTHQ=","*Valid Register Suite","*c:\\Mine\\Company\\SignantHealth\\signant_health_framework\\ui_suite\\tests\\1__register_suite\\1__valid_register_suite.robot","eNrFzTEOwjAMRuGroB6AX6xV6dKFhYkDWEZ1Gos0QY5b1NuDgIkLML5veR3vokk4NkGTtACGFmfNgqHMd84bLjplzn4STh5RP0XxnRSMZ3kUu2FRqou6wKV6xYHIZNLqYl9/ycpJxx/fW7kWb/q/7jtw/wQn2mQS","*<p>Valid account registration Test case TC_01 and test data present in valid_register_test.csv\x3c/p>","*Valid Register Test TC1","*Invalid Register Suite","*c:\\Mine\\Company\\SignantHealth\\signant_health_framework\\ui_suite\\tests\\1__register_suite\\2__invalid_register_suite.robot","eNrFjjEOwjAMRa+CegC+YKxKly4sTBzAMqrTWKQJctwibo9UmLgA43tveR3vokk4NUGTtACGFhfNgqHMD84vXHXKnP0snDyifojihhSMZ3kWu2NRqou6wKV6xYHIZNLqYl9/JNK8ctLxp+yt3Io3/Z8HOnD/BsqhZcI=","*<p>Invalid account registration Test case TC_02 and test data present in invalid_existing_register_test.csv\x3c/p>","*Register With Existing Account Test TC1","*Invalid Register Tooltip Suite","*c:\\Mine\\Company\\SignantHealth\\signant_health_framework\\ui_suite\\tests\\1__register_suite\\3__invalid_register_tooltip_suite.robot","eNrNjkEKwkAMRa8iPYBB3JXaTTduXHmAEDHTCU6Tkkkr3l6wgldw+f77i9fRLjunU5OkcAsAQwsXUYbBppn0BVcZlTTOTCUy1I0wfxCT08RP8wcsgnWRYAiuUeGA6DxKDfbvfkQUXanI/WfCrITM22PvdrNo+j8J6YD6N5+pbJg=","*<p>Invalid account registration Test case TC_03\x3c/p>","*Empty Username Tooltip Test","*<p>Verify username tooltip message\x3c/p>","*Empty Password Tooltip Test","*<p>Verify password tooltip message\x3c/p>","*Empty Firstname Tooltip Test","*<p>Verify firstname tooltip message\x3c/p>","*Empty FamilyName Tooltip Test","*<p>Verify familyname tooltip message\x3c/p>","*Empty Phone Tooltip Test","*<p>Verify phone tooltip message\x3c/p>","*Login Suite","*c:\\Mine\\Company\\SignantHealth\\signant_health_framework\\ui_suite\\tests\\2__login_suite","eNqzSVTIKEpNs1VKy8xJtdLX13e20vfNzEvVd87PLUjMq9QPzkzPS8wr8UhNzCnJ0C+G8OIzwNz4tKLE3NTy/KJs/dLM+OLSzJJU/ZLU4pJifaP4+Jz89Mw8iKCSHS1Nt9FPtAMATdhJ3g==","*Valid Login Suite","*c:\\Mine\\Company\\SignantHealth\\signant_health_framework\\ui_suite\\tests\\2__login_suite\\1__valid_login_suite.robot","eNrFzTEOwjAMRuGroB6AXzBWpUsXFiYOYBnVaSxSByVuEbdHKgzcgPF9y+t4F4uEUxM0SQtgaHFREwx5frC9cNXJ2PwsnDyiforilhQKz/LM5Y5FqS7qApfqFUeilCe1Lx6IVk46/uK+5Fv2pv/TuAP3b1saXuQ=","*<p>Valid user login to see user Information Test case TC_04 and test data present in valid_login_test.csv\x3c/p>","*Valid Login Test TC1","*Invalid Login Suite","*c:\\Mine\\Company\\SignantHealth\\signant_health_framework\\ui_suite\\tests\\2__login_suite\\2__invalid_login_suite.robot","eNrFzTEOwjAMRuGroB6AX2KsSpcuLEwcwDKq01ikDkrcot4eBAzcgPF7y+t4F4uEYxM0SQtgaHFWEwx5vrNtuOhkbH4STh5RP6L4JoXCszxyuWFRqou6wKV6xYEo5UntG19UWznp+Jv3JV+zN/3f1h24fwLpZ2CU","*<p>Invalid user login Test case TC_05 test data for the combination of invalid username and password are taken from excel at test_data/ui_test_data.xlsx\x3c/p>","*Invalid Login Test TC1","*Invalid Login Test TC2"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:01:33","fail":0,"label":"All Tests","pass":12,"skip":0}],[],[{"elapsed":"00:01:34","fail":0,"id":"s1","label":"Ui Suite","name":"Ui Suite","pass":12,"skip":0},{"elapsed":"00:01:34","fail":0,"id":"s1-s1","label":"Ui Suite.Tests","name":"Tests","pass":12,"skip":0},{"elapsed":"00:00:55","fail":0,"id":"s1-s1-s1","label":"Ui Suite.Tests.Register Suite","name":"Register Suite","pass":7,"skip":0},{"elapsed":"00:00:09","fail":0,"id":"s1-s1-s1-s1","label":"Ui Suite.Tests.Register Suite.Valid Register Suite","name":"Valid Register Suite","pass":1,"skip":0},{"elapsed":"00:00:08","fail":0,"id":"s1-s1-s1-s2","label":"Ui Suite.Tests.Register Suite.Invalid Register Suite","name":"Invalid Register Suite","pass":1,"skip":0},{"elapsed":"00:00:38","fail":0,"id":"s1-s1-s1-s3","label":"Ui Suite.Tests.Register Suite.Invalid Register Tooltip Suite","name":"Invalid Register Tooltip Suite","pass":5,"skip":0},{"elapsed":"00:00:39","fail":0,"id":"s1-s1-s2","label":"Ui Suite.Tests.Login Suite","name":"Login Suite","pass":5,"skip":0},{"elapsed":"00:00:08","fail":0,"id":"s1-s1-s2-s1","label":"Ui Suite.Tests.Login Suite.Valid Login Suite","name":"Valid Login Suite","pass":1,"skip":0},{"elapsed":"00:00:31","fail":0,"id":"s1-s1-s2-s2","label":"Ui Suite.Tests.Login Suite.Invalid Login Suite","name":"Invalid Login Suite","pass":4,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:01:34","fail":0,"label":"All Tests","pass":12,"skip":0}],[],[{"elapsed":"00:01:35","fail":0,"id":"s1","label":"Ui Suite","name":"Ui Suite","pass":12,"skip":0},{"elapsed":"00:01:35","fail":0,"id":"s1-s1","label":"Ui Suite.Tests","name":"Tests","pass":12,"skip":0},{"elapsed":"00:00:56","fail":0,"id":"s1-s1-s1","label":"Ui Suite.Tests.Register Suite","name":"Register Suite","pass":7,"skip":0},{"elapsed":"00:00:09","fail":0,"id":"s1-s1-s1-s1","label":"Ui Suite.Tests.Register Suite.Valid Register Suite","name":"Valid Register Suite","pass":1,"skip":0},{"elapsed":"00:00:08","fail":0,"id":"s1-s1-s1-s2","label":"Ui Suite.Tests.Register Suite.Invalid Register Suite","name":"Invalid Register Suite","pass":1,"skip":0},{"elapsed":"00:00:39","fail":0,"id":"s1-s1-s1-s3","label":"Ui Suite.Tests.Register Suite.Invalid Register Tooltip Suite","name":"Invalid Register Tooltip Suite","pass":5,"skip":0},{"elapsed":"00:00:40","fail":0,"id":"s1-s1-s2","label":"Ui Suite.Tests.Login Suite","name":"Login Suite","pass":5,"skip":0},{"elapsed":"00:00:09","fail":0,"id":"s1-s1-s2-s1","label":"Ui Suite.Tests.Login Suite.Valid Login Suite","name":"Valid Login Suite","pass":1,"skip":0},{"elapsed":"00:00:31","fail":0,"id":"s1-s1-s2-s2","label":"Ui Suite.Tests.Login Suite.Invalid Login Suite","name":"Invalid Login Suite","pass":4,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1666732319916;
+window.output["baseMillis"] = 1666733626661;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 94489;
+window.output["generated"] = 95573;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
