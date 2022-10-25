@@ -2,6 +2,9 @@
 Documentation     Invalid account registration
 ...               Test case TC_03
 Resource          ../../Resource/BaseUI/CommonFunctionality.resource
+Resource    ../../Resource/Pages/RegisterPage.resource
+Resource    ../../Resource/Pages/HomePage.resource
+Resource    ../../Resource/Pages/RegisterPage.resource
 Test Setup        Launch Browser And Navigate To Demo App
 Test Teardown     Close Browser
 Test Template     Register Without Filling Required Field Template
@@ -30,23 +33,12 @@ Empty Phone Tooltip Test
 *** Keywords ***
 Register Without Filling Required Field Template
     [Arguments]    ${username}    ${password}    ${firstname}    ${familyname}    ${phone}    ${expected_tooltip}
-    Click Link    locator=link=Register
-    Input Text    locator=id:username    text=${username}
-    Input Password    locator=id:password    password=${password}
-    Input Text    locator=id:firstname    text=${firstname}
-    Input Text    locator=id:lastname    text=${familyname}
-    Input Text    locator=id:phone    text=${phone}
-    Click Button    locator=Register
-    IF    '${username}' == '${EMPTY}'
-        Set Local Variable    ${locator}    \#username
-    ELSE IF    '${password}' == '${EMPTY}'
-        Set Local Variable    ${locator}    \#password
-    ELSE IF    '${firstname}' == '${EMPTY}'
-        Set Local Variable    ${locator}    \#firstname
-    ELSE IF    '${familyname}' == '${EMPTY}'
-        Set Local Variable    ${locator}    \#lastname
-    ELSE IF    '${phone}' == '${EMPTY}'
-        Set Local Variable    ${locator}    \#phone
-    END
-    ${actual_tooltip}    Execute Javascript    return document.querySelector('${locator}').validationMessage
+    Click Register
+    Enter Username    ${username}
+    Enter Password    ${password}
+    Enter Firstname    ${firstname}
+    Enter Familyname    ${familyname}
+    Enter Phone    ${phone}
+    Click Register Button
+    ${actual_tooltip}    Get Tooltip Message    ${username}    ${password}    ${firstname}    ${familyname}    ${phone}
     Should Be Equal    ${expected_tooltip}    ${actual_tooltip}

@@ -1,14 +1,11 @@
 *** Settings ***
-Documentation       This file handles the configuration, reusable keywords
-
-Library             SeleniumLibrary    
-Library             driver_setup.py
-
+Documentation     This file handles the configuration, reusable keywords
+Library           SeleniumLibrary
+Library           driver_setup.py
 
 *** Variables ***
-${BROWSER_NAME}     chrome
-${URL}              http://localhost:8080/
-
+${BROWSER_NAME}    chrome
+${URL}            http://localhost:8080/
 
 *** Keywords ***
 Launch Browser And Navigate To Demo App

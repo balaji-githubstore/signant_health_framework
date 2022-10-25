@@ -1,2 +1,2 @@
 ${test_case_name};${username};${password};${firstname};${familyname};${phone};${expected_message};
-TC1;bala_01;bala0017;Balaji;Dinakaran;809567;;User ken_01 is already registered.;
+TC1;bala_01;bala0017;Balaji;Dinakaran;809567;;User bala_01 is already registered.;
