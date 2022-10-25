@@ -1,3 +1,5 @@
+import json
+
 import requests
 
 from API_Suite.config import *
@@ -10,3 +12,8 @@ class APIListerners():
         response = requests.get(BASE_URI + RESOURCE_API_TOKEN, auth=(username, password))
         access_token = response.json()['token']
         return access_token
+
+    def get_json(self,file):
+        file = open(file)
+        json_body = json.load(file)
+        return json_body
