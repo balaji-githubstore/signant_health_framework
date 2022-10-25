@@ -1,0 +1,2 @@
+${test_case_name};${username};${password};${expected_valid_message};${expected_username};${expected_firstname};${expected_familyname};${expected_phone}
+TC1;bala_01;bala0017;User Information;bala_01;Balaji;Dinakaran;809567;
