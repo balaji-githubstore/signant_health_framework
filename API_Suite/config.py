@@ -6,6 +6,7 @@ RESOURCE_GET_USERS="/api/users/kim_0198d"
 RESOURCE_PUT_USERS="/api/users/kim_0198d"
 
 JSON_ADD_USER="../test_data/add_users.json"
+JSON_UPDATE_USER="../test_data/add_users.json"
 
 
 

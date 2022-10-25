@@ -18,7 +18,7 @@ def test_get_all_users():
     response = requests.get(url=BASE_URI + RESOURCE_GET_ALL_USERS, headers=headers)
     response_text = response.json()
     print(response_text)
-
+    assert_that(response.status_code).is_equal_to(201)
 
 def test_add_user():
     file = open(JSON_ADD_USER)
