@@ -7,7 +7,7 @@ from assertpy import assert_that
 from API_Suite.config import *
 
 
-class TestGetAllUser:
+class TestAddUser:
 
     @pytest.mark.order(1)
     def test_add_user(self):

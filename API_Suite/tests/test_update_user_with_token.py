@@ -8,7 +8,7 @@ from API_Suite.config import *
 from API_Suite.helper.api_listeners import APIListerners
 
 
-class TestGetAllUser(APIListerners):
+class TestUpdateUserWithToken(APIListerners):
 
     def test_update_user(self):
         file = open(JSON_ADD_USER)
@@ -20,3 +20,6 @@ class TestGetAllUser(APIListerners):
         assert_that(response.status_code).is_equal_to(200)
         assert_that(response_json['message']).is_equal_to('Updated')
         assert_that(response_json['status']).is_equal_to('SUCCESS')
+
+
+

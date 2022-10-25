@@ -8,7 +8,7 @@ from API_Suite.config import *
 from API_Suite.helper.api_listeners import APIListerners
 
 
-class TestGetAllUser(APIListerners):
+class TestGetUserWithToken(APIListerners):
 
     def test_get_user(self):
         file = open(JSON_ADD_USER)
