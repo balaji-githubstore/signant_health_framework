@@ -1,4 +1,6 @@
 *** Settings ***
+Documentation     Valid user login to see user Information
+...               Test case TC_04
 Library           SeleniumLibrary
 Resource          ../../Resource/Base/CommonFunctionality.resource
 Test Setup        Launch Browser And Navigate To Demo App
@@ -11,4 +13,5 @@ Valid Login Test
     Input Password    locator=id=password    password=demo1
     Click Element    locator=css=[value='Log In']
     Wait Until Page Contains Element    locator=link=Log Out
-    Element Text Should Be    locator=xpath=//section[@class='content']//h1    expected=User Information
+    Element Text Should Be    locator=xpath=//section[@class='content']//h1    expected=User Information    
+    ...    message=User should have been navigated to login page

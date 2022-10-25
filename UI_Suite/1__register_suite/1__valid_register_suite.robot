@@ -1,4 +1,6 @@
 *** Settings ***
+Documentation     Valid account registration
+...               Test case TC_01
 Library           SeleniumLibrary
 Resource          ../../Resource/Base/CommonFunctionality.resource
 Test Setup        Launch Browser And Navigate To Demo App
@@ -12,5 +14,6 @@ Valid Register Test
     Input Text    locator=id:firstname    text=demo1f
     Input Text    locator=id:lastname    text=demo1l
     Input Text    locator=id:phone    text=80956722
-    Click Button    locator=Register    
-    Element Text Should Be    locator=xpath=//section[@class='content']//h1    expected=Log In    message=Login Page should have been displayed
+    Click Button    locator=Register
+    Element Text Should Be    locator=xpath=//section[@class='content']//h1    expected=Log In    
+    ...    message=Login Page should have been displayed

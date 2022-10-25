@@ -1,4 +1,6 @@
 *** Settings ***
+Documentation     Invalid account registration
+...               Test case TC_02 and TC_03
 Library           SeleniumLibrary
 Resource          ../../Resource/Base/CommonFunctionality.resource
 Test Setup        Launch Browser And Navigate To Demo App
@@ -15,7 +17,8 @@ Register With Existing Account Test
     Input Text    locator=id:lastname    text=demo1l
     Input Text    locator=id:phone    text=80956722
     Click Button    locator=Register
-    Element Should Contain    locator=xpath=//div[contains(text(),'already')]    expected=User demo2 is already registered.    message=User should have been displayed with message as 'User is already registered'
+    Element Should Contain    locator=xpath=//div[contains(text(),'already')]    expected=User demo2 is already registered.    
+    ...    message=User should have been displayed with message as 'User is already registered'
 
 Empty Username Tooltip Test
     [Documentation]    Verify username tooltip message
