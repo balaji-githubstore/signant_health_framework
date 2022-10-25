@@ -1,7 +1,6 @@
 *** Settings ***
 Documentation     Invalid account registration
 ...               Test case TC_02 and TC_03
-Library           SeleniumLibrary
 Resource          ../../Resource/Base/CommonFunctionality.resource
 Test Setup        Launch Browser And Navigate To Demo App
 Test Teardown     Close Browser

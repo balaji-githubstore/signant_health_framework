@@ -1,7 +1,6 @@
 *** Settings ***
 Documentation     Valid account registration
 ...               Test case TC_01
-Library           SeleniumLibrary
 Resource          ../../Resource/Base/CommonFunctionality.resource
 Test Setup        Launch Browser And Navigate To Demo App
 Test Teardown     Close Browser

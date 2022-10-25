@@ -1,7 +1,6 @@
 *** Settings ***
 Documentation     Valid user login to see user Information
 ...               Test case TC_04
-Library           SeleniumLibrary
 Resource          ../../Resource/Base/CommonFunctionality.resource
 Test Setup        Launch Browser And Navigate To Demo App
 Test Teardown     Close Browser

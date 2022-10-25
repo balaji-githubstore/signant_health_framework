@@ -1,119 +1,321 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20221025 12:23:40.504" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20221025 12:41:35.529" rpa="false" schemaversion="2">
 <suite id="s1" name="Invalid Login Suite" source="c:\Mine\Company\SignantHealth\signant_health_framework\UI_Suite\2__login_suite\2__invalid_login_suite.robot">
-<test id="s1-t1" name="Invalid Login Test">
+<test id="s1-t1" name="Invalid Username And Password">
 <kw name="Launch Browser And Navigate To Demo App" library="CommonFunctionality" type="SETUP">
 <kw name="Get Driver Path" library="driver_setup">
 <var>${driver_path}</var>
 <arg>${BROWSER_NAME}</arg>
-<msg timestamp="20221025 12:23:40.888" level="INFO">====== WebDriver manager ======</msg>
-<msg timestamp="20221025 12:23:41.272" level="INFO">Get LATEST chromedriver version for google-chrome 106.0.5249</msg>
-<msg timestamp="20221025 12:23:41.825" level="INFO">Driver [C:\Users\JiDi\.wdm\drivers\chromedriver\win32\106.0.5249\chromedriver.exe] found in cache</msg>
-<msg timestamp="20221025 12:23:41.825" level="INFO">${driver_path} = C:\Users\JiDi\.wdm\drivers\chromedriver\win32\106.0.5249\chromedriver.exe</msg>
-<status status="PASS" starttime="20221025 12:23:40.887" endtime="20221025 12:23:41.825"/>
+<msg timestamp="20221025 12:41:36.627" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20221025 12:41:37.002" level="INFO">Get LATEST chromedriver version for google-chrome 106.0.5249</msg>
+<msg timestamp="20221025 12:41:37.486" level="INFO">Driver [C:\Users\JiDi\.wdm\drivers\chromedriver\win32\106.0.5249\chromedriver.exe] found in cache</msg>
+<msg timestamp="20221025 12:41:37.486" level="INFO">${driver_path} = C:\Users\JiDi\.wdm\drivers\chromedriver\win32\106.0.5249\chromedriver.exe</msg>
+<status status="PASS" starttime="20221025 12:41:36.627" endtime="20221025 12:41:37.486"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>browser=${BROWSER_NAME}</arg>
 <arg>executable_path=${driver_path}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20221025 12:23:41.826" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20221025 12:23:41.826" endtime="20221025 12:23:43.000"/>
+<msg timestamp="20221025 12:41:37.487" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20221025 12:41:37.487" endtime="20221025 12:41:38.736"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20221025 12:23:43.001" endtime="20221025 12:23:43.117"/>
+<status status="PASS" starttime="20221025 12:41:38.736" endtime="20221025 12:41:38.852"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>10s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20221025 12:23:43.117" endtime="20221025 12:23:43.120"/>
+<status status="PASS" starttime="20221025 12:41:38.852" endtime="20221025 12:41:38.854"/>
 </kw>
 <kw name="Set Selenium Timeout" library="SeleniumLibrary">
 <arg>value=10s</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20221025 12:23:43.120" endtime="20221025 12:23:43.121"/>
+<status status="PASS" starttime="20221025 12:41:38.854" endtime="20221025 12:41:38.856"/>
 </kw>
 <kw name="Set Screenshot Directory" library="SeleniumLibrary">
 <arg>path=screenshot/</arg>
 <doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20221025 12:23:43.121" endtime="20221025 12:23:43.122"/>
+<status status="PASS" starttime="20221025 12:41:38.856" endtime="20221025 12:41:38.856"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>url=${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20221025 12:23:43.122" level="INFO">Opening url 'http://localhost:8080/'</msg>
-<status status="PASS" starttime="20221025 12:23:43.122" endtime="20221025 12:23:44.523"/>
+<msg timestamp="20221025 12:41:38.857" level="INFO">Opening url 'http://localhost:8080/'</msg>
+<status status="PASS" starttime="20221025 12:41:38.856" endtime="20221025 12:41:39.744"/>
 </kw>
-<status status="PASS" starttime="20221025 12:23:40.887" endtime="20221025 12:23:44.524"/>
+<status status="PASS" starttime="20221025 12:41:36.626" endtime="20221025 12:41:39.744"/>
 </kw>
 <kw name="Invalid Login Template">
-<arg>john</arg>
-<arg>john123</arg>
+<arg>bala</arg>
+<arg>bala123</arg>
 <arg>Login Failure</arg>
 <arg>You provided incorrect login details</arg>
 <kw name="Click Link" library="SeleniumLibrary">
 <arg>locator=link=Log In</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20221025 12:23:44.527" level="INFO">Clicking link 'link=Log In'.</msg>
-<status status="PASS" starttime="20221025 12:23:44.525" endtime="20221025 12:23:44.913"/>
+<msg timestamp="20221025 12:41:39.746" level="INFO">Clicking link 'link=Log In'.</msg>
+<status status="PASS" starttime="20221025 12:41:39.746" endtime="20221025 12:41:40.147"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>locator=id=username</arg>
 <arg>text=${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20221025 12:23:44.916" level="INFO">Typing text 'john' into text field 'id=username'.</msg>
-<status status="PASS" starttime="20221025 12:23:44.914" endtime="20221025 12:23:45.011"/>
+<msg timestamp="20221025 12:41:40.147" level="INFO">Typing text 'bala' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20221025 12:41:40.147" endtime="20221025 12:41:40.240"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>locator=id=password</arg>
 <arg>password=${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20221025 12:23:45.011" level="INFO">Typing password into text field 'id=password'.</msg>
-<msg timestamp="20221025 12:23:45.049" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20221025 12:23:45.092" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20221025 12:23:45.011" endtime="20221025 12:23:45.092"/>
+<msg timestamp="20221025 12:41:40.241" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20221025 12:41:40.278" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20221025 12:41:40.324" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20221025 12:41:40.240" endtime="20221025 12:41:40.325"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>locator=css=[value='Log In']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20221025 12:23:45.093" level="INFO">Clicking element 'css=[value='Log In']'.</msg>
-<status status="PASS" starttime="20221025 12:23:45.092" endtime="20221025 12:23:45.472"/>
+<msg timestamp="20221025 12:41:40.325" level="INFO">Clicking element 'css=[value='Log In']'.</msg>
+<status status="PASS" starttime="20221025 12:41:40.325" endtime="20221025 12:41:40.760"/>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
 <arg>locator=xpath=//section[@class='content']//h1</arg>
 <arg>expected=${expected_header}</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20221025 12:23:45.473" level="INFO">Verifying element 'xpath=//section[@class='content']//h1' contains exact text 'Login Failure'.</msg>
-<status status="PASS" starttime="20221025 12:23:45.472" endtime="20221025 12:23:45.518"/>
+<msg timestamp="20221025 12:41:40.762" level="INFO">Verifying element 'xpath=//section[@class='content']//h1' contains exact text 'Login Failure'.</msg>
+<status status="PASS" starttime="20221025 12:41:40.761" endtime="20221025 12:41:40.796"/>
 </kw>
 <kw name="Element Should Contain" library="SeleniumLibrary">
 <arg>locator=xpath=//p[contains(text(),'incorrect')]</arg>
 <arg>expected=${expected_invalid_message}</arg>
 <arg>message=User should have been displayed with message as 'You provided incorrect login details'</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20221025 12:23:45.544" level="INFO">Element 'xpath=//p[contains(text(),'incorrect')]' contains text 'You provided incorrect login details'.</msg>
-<status status="PASS" starttime="20221025 12:23:45.518" endtime="20221025 12:23:45.544"/>
+<msg timestamp="20221025 12:41:40.823" level="INFO">Element 'xpath=//p[contains(text(),'incorrect')]' contains text 'You provided incorrect login details'.</msg>
+<status status="PASS" starttime="20221025 12:41:40.796" endtime="20221025 12:41:40.823"/>
 </kw>
-<status status="PASS" starttime="20221025 12:23:44.525" endtime="20221025 12:23:45.544"/>
+<status status="PASS" starttime="20221025 12:41:39.745" endtime="20221025 12:41:40.823"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20221025 12:23:45.545" endtime="20221025 12:23:47.686"/>
+<status status="PASS" starttime="20221025 12:41:40.824" endtime="20221025 12:41:42.955"/>
 </kw>
-<status status="PASS" starttime="20221025 12:23:40.886" endtime="20221025 12:23:47.689"/>
+<status status="PASS" starttime="20221025 12:41:36.624" endtime="20221025 12:41:42.957"/>
+</test>
+<test id="s1-t2" name="Invalid Username">
+<kw name="Launch Browser And Navigate To Demo App" library="CommonFunctionality" type="SETUP">
+<kw name="Get Driver Path" library="driver_setup">
+<var>${driver_path}</var>
+<arg>${BROWSER_NAME}</arg>
+<msg timestamp="20221025 12:41:42.977" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20221025 12:41:43.429" level="INFO">Get LATEST chromedriver version for google-chrome 106.0.5249</msg>
+<msg timestamp="20221025 12:41:43.873" level="INFO">Driver [C:\Users\JiDi\.wdm\drivers\chromedriver\win32\106.0.5249\chromedriver.exe] found in cache</msg>
+<msg timestamp="20221025 12:41:43.874" level="INFO">${driver_path} = C:\Users\JiDi\.wdm\drivers\chromedriver\win32\106.0.5249\chromedriver.exe</msg>
+<status status="PASS" starttime="20221025 12:41:42.976" endtime="20221025 12:41:43.874"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER_NAME}</arg>
+<arg>executable_path=${driver_path}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221025 12:41:43.874" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20221025 12:41:43.874" endtime="20221025 12:41:45.054"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221025 12:41:45.055" endtime="20221025 12:41:45.183"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20221025 12:41:45.183" endtime="20221025 12:41:45.187"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>value=10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20221025 12:41:45.187" endtime="20221025 12:41:45.189"/>
+</kw>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>path=screenshot/</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20221025 12:41:45.189" endtime="20221025 12:41:45.190"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20221025 12:41:45.190" level="INFO">Opening url 'http://localhost:8080/'</msg>
+<status status="PASS" starttime="20221025 12:41:45.190" endtime="20221025 12:41:46.130"/>
+</kw>
+<status status="PASS" starttime="20221025 12:41:42.974" endtime="20221025 12:41:46.131"/>
+</kw>
+<kw name="Invalid Login Template">
+<arg>bala</arg>
+<arg>demo1</arg>
+<arg>Login Failure</arg>
+<arg>You provided incorrect login details</arg>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>locator=link=Log In</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221025 12:41:46.135" level="INFO">Clicking link 'link=Log In'.</msg>
+<status status="PASS" starttime="20221025 12:41:46.133" endtime="20221025 12:41:46.553"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=id=username</arg>
+<arg>text=${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221025 12:41:46.554" level="INFO">Typing text 'bala' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20221025 12:41:46.554" endtime="20221025 12:41:46.636"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>locator=id=password</arg>
+<arg>password=${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20221025 12:41:46.637" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20221025 12:41:46.675" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20221025 12:41:46.719" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20221025 12:41:46.636" endtime="20221025 12:41:46.719"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=css=[value='Log In']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221025 12:41:46.720" level="INFO">Clicking element 'css=[value='Log In']'.</msg>
+<status status="PASS" starttime="20221025 12:41:46.720" endtime="20221025 12:41:47.128"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>locator=xpath=//section[@class='content']//h1</arg>
+<arg>expected=${expected_header}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221025 12:41:47.129" level="INFO">Verifying element 'xpath=//section[@class='content']//h1' contains exact text 'Login Failure'.</msg>
+<status status="PASS" starttime="20221025 12:41:47.129" endtime="20221025 12:41:47.161"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>locator=xpath=//p[contains(text(),'incorrect')]</arg>
+<arg>expected=${expected_invalid_message}</arg>
+<arg>message=User should have been displayed with message as 'You provided incorrect login details'</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20221025 12:41:47.182" level="INFO">Element 'xpath=//p[contains(text(),'incorrect')]' contains text 'You provided incorrect login details'.</msg>
+<status status="PASS" starttime="20221025 12:41:47.161" endtime="20221025 12:41:47.183"/>
+</kw>
+<status status="PASS" starttime="20221025 12:41:46.131" endtime="20221025 12:41:47.184"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221025 12:41:47.186" endtime="20221025 12:41:49.321"/>
+</kw>
+<status status="PASS" starttime="20221025 12:41:42.967" endtime="20221025 12:41:49.324"/>
+</test>
+<test id="s1-t3" name="Invalid Password">
+<kw name="Launch Browser And Navigate To Demo App" library="CommonFunctionality" type="SETUP">
+<kw name="Get Driver Path" library="driver_setup">
+<var>${driver_path}</var>
+<arg>${BROWSER_NAME}</arg>
+<msg timestamp="20221025 12:41:49.345" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20221025 12:41:49.767" level="INFO">Get LATEST chromedriver version for google-chrome 106.0.5249</msg>
+<msg timestamp="20221025 12:41:50.241" level="INFO">Driver [C:\Users\JiDi\.wdm\drivers\chromedriver\win32\106.0.5249\chromedriver.exe] found in cache</msg>
+<msg timestamp="20221025 12:41:50.242" level="INFO">${driver_path} = C:\Users\JiDi\.wdm\drivers\chromedriver\win32\106.0.5249\chromedriver.exe</msg>
+<status status="PASS" starttime="20221025 12:41:49.343" endtime="20221025 12:41:50.242"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER_NAME}</arg>
+<arg>executable_path=${driver_path}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221025 12:41:50.242" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20221025 12:41:50.242" endtime="20221025 12:41:51.510"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221025 12:41:51.511" endtime="20221025 12:41:51.653"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20221025 12:41:51.653" endtime="20221025 12:41:51.655"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>value=10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20221025 12:41:51.655" endtime="20221025 12:41:51.657"/>
+</kw>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>path=screenshot/</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20221025 12:41:51.657" endtime="20221025 12:41:51.658"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20221025 12:41:51.658" level="INFO">Opening url 'http://localhost:8080/'</msg>
+<status status="PASS" starttime="20221025 12:41:51.658" endtime="20221025 12:41:52.523"/>
+</kw>
+<status status="PASS" starttime="20221025 12:41:49.341" endtime="20221025 12:41:52.524"/>
+</kw>
+<kw name="Invalid Login Template">
+<arg>demo1</arg>
+<arg>bala123</arg>
+<arg>Login Failure</arg>
+<arg>You provided incorrect login details</arg>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>locator=link=Log In</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20221025 12:41:52.525" level="INFO">Clicking link 'link=Log In'.</msg>
+<status status="PASS" starttime="20221025 12:41:52.525" endtime="20221025 12:41:52.911"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=id=username</arg>
+<arg>text=${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221025 12:41:52.912" level="INFO">Typing text 'demo1' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20221025 12:41:52.912" endtime="20221025 12:41:52.997"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>locator=id=password</arg>
+<arg>password=${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20221025 12:41:52.998" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20221025 12:41:53.037" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20221025 12:41:53.079" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20221025 12:41:52.997" endtime="20221025 12:41:53.079"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=css=[value='Log In']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221025 12:41:53.079" level="INFO">Clicking element 'css=[value='Log In']'.</msg>
+<status status="PASS" starttime="20221025 12:41:53.079" endtime="20221025 12:41:53.471"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>locator=xpath=//section[@class='content']//h1</arg>
+<arg>expected=${expected_header}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20221025 12:41:53.473" level="INFO">Verifying element 'xpath=//section[@class='content']//h1' contains exact text 'Login Failure'.</msg>
+<status status="PASS" starttime="20221025 12:41:53.472" endtime="20221025 12:41:53.504"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>locator=xpath=//p[contains(text(),'incorrect')]</arg>
+<arg>expected=${expected_invalid_message}</arg>
+<arg>message=User should have been displayed with message as 'You provided incorrect login details'</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20221025 12:41:53.525" level="INFO">Element 'xpath=//p[contains(text(),'incorrect')]' contains text 'You provided incorrect login details'.</msg>
+<status status="PASS" starttime="20221025 12:41:53.504" endtime="20221025 12:41:53.525"/>
+</kw>
+<status status="PASS" starttime="20221025 12:41:52.524" endtime="20221025 12:41:53.525"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20221025 12:41:53.526" endtime="20221025 12:41:55.668"/>
+</kw>
+<status status="PASS" starttime="20221025 12:41:49.331" endtime="20221025 12:41:55.670"/>
 </test>
 <doc>Invalid user login
 Test case TC_02 and TC_03</doc>
-<status status="PASS" starttime="20221025 12:23:40.511" endtime="20221025 12:23:47.698"/>
+<status status="PASS" starttime="20221025 12:41:35.536" endtime="20221025 12:41:55.674"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Invalid Login Suite">Invalid Login Suite</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="Invalid Login Suite">Invalid Login Suite</stat>
 </suite>
 </statistics>
 <errors>
