@@ -1,0 +1,58 @@
+==============================================================================
+Valid Register Suite & Invalid Register Suite Copy & Invalid Register Toolt...
+==============================================================================
+Valid Register Suite & Invalid Register Suite Copy & Invalid Register Toolt...
+==============================================================================
+Valid Register Test TC1                                               | PASS |
+------------------------------------------------------------------------------
+Valid Register Suite & Invalid Register Suite Copy & Invalid Regis... | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Valid Register Suite & Invalid Register Suite Copy & Invalid Register Toolt...
+==============================================================================
+Register With Existing Account Test TC1                               | PASS |
+------------------------------------------------------------------------------
+Valid Register Suite & Invalid Register Suite Copy & Invalid Regis... | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Valid Register Suite & Invalid Register Suite Copy & Invalid Register Toolt...
+==============================================================================
+Empty Username Tooltip Test :: Verify username tooltip message        | PASS |
+------------------------------------------------------------------------------
+Empty Password Tooltip Test :: Verify password tooltip message        | PASS |
+------------------------------------------------------------------------------
+Empty Firstname Tooltip Test :: Verify firstname tooltip message      | PASS |
+------------------------------------------------------------------------------
+Empty FamilyName Tooltip Test :: Verify familyname tooltip message    | PASS |
+------------------------------------------------------------------------------
+Empty Phone Tooltip Test :: Verify phone tooltip message              | PASS |
+------------------------------------------------------------------------------
+Valid Register Suite & Invalid Register Suite Copy & Invalid Regis... | PASS |
+5 tests, 5 passed, 0 failed
+==============================================================================
+Valid Register Suite & Invalid Register Suite Copy & Invalid Register Toolt...
+==============================================================================
+Valid Login Test TC1                                                  | PASS |
+------------------------------------------------------------------------------
+Valid Register Suite & Invalid Register Suite Copy & Invalid Regis... | PASS |
+1 test, 1 passed, 0 failed
+==============================================================================
+Valid Register Suite & Invalid Register Suite Copy & Invalid Register Toolt...
+==============================================================================
+Invalid Login Test TC1                                                | PASS |
+------------------------------------------------------------------------------
+Invalid Login Test TC2                                                | PASS |
+------------------------------------------------------------------------------
+Empty Username Tooltip Test                                           | PASS |
+------------------------------------------------------------------------------
+Empty Password Tooltip Test                                           | PASS |
+------------------------------------------------------------------------------
+Valid Register Suite & Invalid Register Suite Copy & Invalid Regis... | PASS |
+4 tests, 4 passed, 0 failed
+==============================================================================
+Valid Register Suite & Invalid Register Suite Copy & Invalid Regis... | PASS |
+12 tests, 12 passed, 0 failed
+==============================================================================
+Output:  C:\Mine\Company\SignantHealth\signant_health_framework\output.xml
+Log:     C:\Mine\Company\SignantHealth\signant_health_framework\log.html
+Report:  C:\Mine\Company\SignantHealth\signant_health_framework\report.html
