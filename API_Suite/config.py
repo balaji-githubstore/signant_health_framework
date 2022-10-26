@@ -7,6 +7,7 @@ RESOURCE_GET_PUT_USER="/api/users/{username}"
 
 ADD_USER_JSON="../test_data/add_users.json"
 UPDATE_USER_JSON="../test_data/update_users.json"
+INVALID_ADD_USER_JSON="../test_data/invalid_add_users.json"
 
 
 
