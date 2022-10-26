@@ -8,3 +8,4 @@ selenium==4.1.0
 urllib3==1.26.8
 webdriver-manager==3.8.4
 xlrd==2.0.1
+pytest-html==3.2.0

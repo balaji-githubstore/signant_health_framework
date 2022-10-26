@@ -7,6 +7,8 @@ Test Setup        Launch Browser And Navigate To Demo App
 Test Teardown     Close Browser
 Test Template    Valid Login Template
 
+Default Tags    Login
+
 *** Test Cases ***
 Valid Login Test ${test_case_name}
 

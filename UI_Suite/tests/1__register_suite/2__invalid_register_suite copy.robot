@@ -6,6 +6,8 @@ Library           DataDriver    file=../../test_data/invalid_existing_register_t
 Test Setup        Launch Browser And Navigate To Demo App
 Test Teardown     Close Browser
 
+Default Tags    Register
+
 *** Test Cases ***
 Register With Existing Account Test ${test_case_name}
     [Template]    Register With Existing Account Template

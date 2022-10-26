@@ -1,9 +1,10 @@
 ============================= test session starts =============================
 platform win32 -- Python 3.10.2, pytest-7.2.0, pluggy-1.0.0
 rootdir: C:\Mine\Company\SignantHealth\signant_health_framework
-plugins: allure-pytest-2.11.1
+plugins: allure-pytest-2.11.1, html-3.2.0, metadata-2.0.3
 collected 10 items
 
 API_Suite\tests\test_api.py ..........                                   [100%]
 
-============================= 10 passed in 25.61s =============================
+- generated html file: file:///C:/Mine/Company/SignantHealth/signant_health_framework/py_report.html -
+============================= 10 passed in 25.25s =============================

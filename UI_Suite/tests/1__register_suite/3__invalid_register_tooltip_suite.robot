@@ -6,6 +6,8 @@ Test Setup        Launch Browser And Navigate To Demo App
 Test Teardown     Close Browser
 Test Template     Register Without Filling Required Field Template
 
+Default Tags    Register
+
 *** Test Cases ***
 Empty Username Tooltip Test
     [Documentation]    Verify username tooltip message
