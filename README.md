@@ -4,7 +4,11 @@
 Check the file in project directory with name as UI_API_TestCaseDoc.xlsx
 
 ## Installation Instructions ##
-To run the UI and API, install the requirements.txt
+Install the requirements.txt
+
+## Executable Instructions ##
+To run the API automation, you can trigger the run_api_test.sh file
+To run the UI automation, you can trigger the run_ui_test.sh file
 
 ## Acceptance Criteria - Automation Project Description ##
 
