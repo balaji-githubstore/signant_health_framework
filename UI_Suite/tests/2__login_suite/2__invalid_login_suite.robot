@@ -10,6 +10,8 @@ Test Setup        Launch Browser And Navigate To Demo App
 Test Teardown     Close Browser
 Test Template     Invalid Login Template
 
+Default Tags    Login
+
 *** Test Cases ***
 Invalid Login Test TC1
     john    john123    You provided incorrect login details

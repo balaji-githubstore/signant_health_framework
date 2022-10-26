@@ -9,6 +9,8 @@ Library           DataDriver    file=../../test_data/valid_register_test.csv
 Test Setup        Launch Browser And Navigate To Demo App
 Test Teardown     Close Browser
 
+Default Tags    Register
+
 *** Test Cases ***
 Valid Register Test ${test_case_name}
     [Template]    Valid Register Template
